@@ -1,32 +1,36 @@
 import React from 'react'
-import { SafeAreaView, View, Image, Text, TouchableOpacity } from 'react-native'
+import { SafeAreaView, View, Text, TouchableOpacity } from 'react-native'
 
 import { MaterialIcons } from '@expo/vector-icons'
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView
       style={{
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: '#fff'
       }}
     >
-      <View style={{ marginTop: 20 }}>
+      <View
+        style={{
+          marginTop: 40
+        }}
+      >
         <Text
           style={{
             fontWeight: 'bold',
-            fontSize: 30,
-            color: '#fff'
+            fontSize: 35,
+            color: '#666'
           }}
         >
           REACTFLIX
         </Text>
       </View>
-
       <TouchableOpacity
         style={{
-          backgroundColor: '#666',
+          backgroundColor: '#8B0000',
           padding: 20,
           width: '90%',
           borderRadius: 10,
@@ -34,23 +38,22 @@ const HomeScreen = () => {
           flexDirection: 'row',
           justifyContent: 'space-between'
         }}
-        onPress={() => {}}
+        onPress={() => navigation.navigate('Login')}
       >
         <Text
           style={{
-            color: '#fff',
+            color: 'white',
             fontSize: 18,
             textAlign: 'center',
             fontWeight: 'bold'
           }}
         >
-          Voltar
+          Entrar
         </Text>
-
         <MaterialIcons
-          name="arrow-back"
+          name="login"
           size={20}
-          color={'#666'}
+          color={'#fff'}
           style={{ marginRight: 5 }}
         />
       </TouchableOpacity>
