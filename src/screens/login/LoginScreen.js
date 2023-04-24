@@ -20,7 +20,7 @@ const GoogleImageSrc = '../../../assets/images/google.png'
 const FacebookImageSrc = '../../../assets/images/facebook.png'
 const TwitterImageSrc = '../../../assets/images/twitter.png'
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   return (
     <SafeAreaView
       style={{
@@ -68,7 +68,10 @@ const LoginScreen = () => {
           fieldButtonFunction={() => {}}
         />
 
-        <CustomButton label={'Login'} onPress={() => {}} />
+        <CustomButton
+          label={'Login'}
+          onPress={() => navigation.navigate('Home')}
+        />
         <Text
           style={{
             textAlign: 'center',
@@ -149,7 +152,7 @@ const LoginScreen = () => {
           }}
         >
           <Text>Novo por aqui? </Text>
-          <TouchableOpacity onPress={() => {}}>
+          <TouchableOpacity onPress={() => navigation.navigate('Register')}>
             <Text>Registrar-se</Text>
           </TouchableOpacity>
         </View>

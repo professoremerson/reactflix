@@ -21,7 +21,7 @@ const GoogleImageSrc = '../../../assets/images/google.png'
 const FacebookImageSrc = '../../../assets/images/facebook.png'
 const TwitterImageSrc = '../../../assets/images/twitter.png'
 
-const RegisterScreen = () => {
+const RegisterScreen = ({ navigation }) => {
   const [date, setDate] = useState(new Date())
   const [open, setOpen] = useState(false)
   const [birthLabel, setBirthLabel] = useState('Data de Nascimento')
@@ -236,7 +236,10 @@ const RegisterScreen = () => {
           }}
         />
 
-        <CustomButton label={'Registrar'} onPress={() => {}} />
+        <CustomButton
+          label={'Registrar'}
+          onPress={() => navigation.navigate('Home')}
+        />
 
         <View
           style={{
@@ -246,7 +249,7 @@ const RegisterScreen = () => {
           }}
         >
           <Text>Já possui cadastro? </Text>
-          <TouchableOpacity onPress={() => {}}>
+          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
             <Text style={{ color: '#fff', fontWeight: '700' }}>Login</Text>
           </TouchableOpacity>
         </View>
